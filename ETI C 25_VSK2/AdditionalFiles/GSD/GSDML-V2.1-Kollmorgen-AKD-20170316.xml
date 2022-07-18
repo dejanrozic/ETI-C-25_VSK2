@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile  ..\XSD\GSDML-DeviceProfile-v2.1.xsd">
+  <ProfileHeader>
+    <ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+    <ProfileRevision>1.00</ProfileRevision>
+    <ProfileName>Device Profile for PROFINET Devices</ProfileName>
+    <ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+    <ProfileClassID>Device</ProfileClassID>
+    <ISO15745Reference>
+      <ISO15745Part>4</ISO15745Part>
+      <ISO15745Edition>1</ISO15745Edition>
+      <ProfileTechnology>GSDML</ProfileTechnology>
+    </ISO15745Reference>
+  </ProfileHeader>
+  <ProfileBody>
+    <DeviceIdentity VendorID="0x0105" DeviceID="0x0001">
+      <InfoText TextId="IDT_FamilyDescription" />
+      <VendorName Value="Kollmorgen" />
+    </DeviceIdentity>
+    <DeviceFunction>
+      <Family MainFamily="Drives" ProductFamily="AKD" />
+    </DeviceFunction>
+    <ApplicationProcess>
+      <DeviceAccessPointList>
+        <DeviceAccessPointItem ID="DAP_1" PhysicalSlots="0..1" ModuleIdentNumber="0x00000001" MinDeviceInterval="512" ImplementationType="Controller" DNS_CompatibleName="AKD-PN" ExtendedAddressAssignmentSupported="false" FixedInSlots="0" ObjectUUID_LocalIndex="1" RequiredSchemaVersion="V2.1" MultipleWriteSupported="false" IOXS_Required="true" RemoteApplicationTimeout="300" AddressAssignment="DCP">
+          <ModuleInfo>
+            <Name TextId="IDT_MOD_NAME_DAP1" />
+            <InfoText TextId="IDT_INFO_DAP1" />
+            <VendorName Value="Kollmorgen" />
+            <OrderNumber Value="AKD-Pxxxxx-xxPN-xxxx" />
+            <HardwareRelease Value="V02" />
+            <SoftwareRelease Value="V00.02" />
+          </ModuleInfo>
+        <IOConfigData MaxInputLength="128" MaxOutputLength="128" />
+          <UseableModules>
+            <!-- list all modules from ModuleList here -->
+            <ModuleItemRef ModuleItemTarget="IDM_STD1" AllowedInSlots="1"/>
+            <ModuleItemRef ModuleItemTarget="IDM_STD7" AllowedInSlots="1"/>
+            <ModuleItemRef ModuleItemTarget="IDM_STD9" AllowedInSlots="1"/>
+            <ModuleItemRef ModuleItemTarget="IDM_AKD350" AllowedInSlots="1"/>
+            <ModuleItemRef ModuleItemTarget="IDM_AKD351" AllowedInSlots="1"/>
+            <ModuleItemRef ModuleItemTarget="IDM_AKD352" AllowedInSlots="1"/>
+            <ModuleItemRef ModuleItemTarget="IDM_AKD353" AllowedInSlots="1"/>			
+            <ModuleItemRef ModuleItemTarget="IDM_AKD400" AllowedInSlots="1"/>
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="IDS_SUBMODULE_PARAMDAP" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1" PROFIsafeSupported="false">
+            <IOData IOPS_Length="1" IOCS_Length="1" />
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <Graphics>
+            <GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1" />
+          </Graphics>
+        </DeviceAccessPointItem>
+      </DeviceAccessPointList>
+      <ModuleList>
+        <!--standard telegram 1: 2/2 PZD-->
+        <ModuleItem ID="IDM_STD1" ModuleIdentNumber="0x00000001">
+          <ModuleInfo>
+            <Name TextId="IDT_MOD_NAME_TEL1" />
+            <InfoText TextId="IDT_MOD_INFO_TEL1" />
+            <HardwareRelease Value="1.0" />
+            <SoftwareRelease Value="1.0" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="IDS_1" SubmoduleIdentNumber="0x00000001" API="0" FixedInSubslots="1" PROFIsafeSupported="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ZSW1" />
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_NIST_A" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_STW1" />
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_NSOLL_A" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="IDT_SM_NAME_TEL1" />
+                <InfoText TextId="IDT_SM_INFO_TEL1" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <!--standard telegram 7: 2/2 PZD -->
+        <ModuleItem ID="IDM_STD7" ModuleIdentNumber="0x00000007">
+          <ModuleInfo>
+            <Name TextId="IDT_MOD_NAME_TEL7" />
+            <InfoText TextId="IDT_MOD_INFO_TEL7" />
+            <HardwareRelease Value="1.0" />
+            <SoftwareRelease Value="1.0" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="IDS_7" SubmoduleIdentNumber="0x00000007" API="0" FixedInSubslots="1" PROFIsafeSupported="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ZSW1" />
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_AKTSATZ" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_STW1" />
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_SATZANW" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="IDT_SM_NAME_TEL7" />
+                <InfoText TextId="IDT_SM_INFO_TEL7" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <!--standard telegram 9: 2/2 PZD -->
+        <ModuleItem ID="IDM_STD9" ModuleIdentNumber="0x00000009">
+          <ModuleInfo>
+            <Name TextId="IDT_MOD_NAME_TEL9" />
+            <InfoText TextId="IDT_MOD_INFO_TEL9" />
+            <HardwareRelease Value="1.0" />
+            <SoftwareRelease Value="1.0" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="IDS_9" SubmoduleIdentNumber="0x00000009" API="0" FixedInSubslots="1" PROFIsafeSupported="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ZSW1" />
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_AKTSATZ" />
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ZSW2" />
+                  <DataItem DataType="Unsigned32" TextId="IDT_DATAITEM_XIST_A" />                  
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_STW1" />
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_SATZANW" />
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_STW2" />
+                  <DataItem DataType="Unsigned32" TextId="IDT_DATAITEM_MDI_TARPOS" />
+                  <DataItem DataType="Unsigned32" TextId="IDT_DATAITEM_MDI_VELOCITY" />
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_MDI_ACC" />
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_MDI_DEC" />
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_MDI_MOD" />
+                </Output>
+              </IOData>
+               <ModuleInfo>
+                 <Name TextId="IDT_SM_NAME_TEL9" />
+                 <InfoText TextId="IDT_SM_INFO_TEL9" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>   
+        <!--AKD Specific telegram 350: 2/4 PZD-->
+        <ModuleItem ID="IDM_AKD350" ModuleIdentNumber="0x0000015E">
+          <ModuleInfo>
+            <Name TextId="IDT_MOD_NAME_TEL350" />
+            <InfoText TextId="IDT_MOD_INFO_TEL350" />
+            <HardwareRelease Value="1.0" />
+            <SoftwareRelease Value="1.0" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="IDS_350" SubmoduleIdentNumber="0x0000015E" API="0" FixedInSubslots="1" PROFIsafeSupported="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ZSW1" />
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_NIST_A" />
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ITISTGLATT" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_STW1" />
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_NSOLL_A" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="IDT_SM_NAME_TEL350" />
+                <InfoText TextId="IDT_SM_INFO_TEL350" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+         <!--AKD Specific telegram 351: 2/8 PZD-->
+        <ModuleItem ID="IDM_AKD351" ModuleIdentNumber="0x0000015f">
+          <ModuleInfo>
+            <Name TextId="IDT_MOD_NAME_TEL351" />
+            <InfoText TextId="IDT_MOD_INFO_TEL351" />
+            <HardwareRelease Value="1.0" />
+            <SoftwareRelease Value="1.0" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="IDS_351" SubmoduleIdentNumber="0x0000015f" API="0" FixedInSubslots="1" PROFIsafeSupported="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ZSW1" />
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_NIST_A" />
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ITISTGLATT" />
+                  <DataItem DataType="Unsigned32" TextId="IDT_DATAITEM_XIST_A" /> 
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_STW1" />
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_NSOLL_A" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="IDT_SM_NAME_TEL351" />
+                <InfoText TextId="IDT_SM_INFO_TEL351" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem> 
+       <!--standard telegram 352: 2/2 PZD -->
+        <ModuleItem ID="IDM_AKD352" ModuleIdentNumber="0x00000160">
+          <ModuleInfo>
+            <Name TextId="IDT_MOD_NAME_TEL352" />
+            <InfoText TextId="IDT_MOD_INFO_TEL352" />
+            <HardwareRelease Value="1.0" />
+            <SoftwareRelease Value="1.0" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="IDS_352" SubmoduleIdentNumber="0x00000160" API="0" FixedInSubslots="1" PROFIsafeSupported="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ZSW1" />
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_AKTSATZ" />
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ZSW2" />
+                  <DataItem DataType="Unsigned32" TextId="IDT_DATAITEM_XIST_A" />                  
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_STW1" />
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_SATZANW" />
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_STW2" />
+                  <DataItem DataType="Unsigned32" TextId="IDT_DATAITEM_MDI_TARPOS" />
+                  <DataItem DataType="Unsigned32" TextId="IDT_DATAITEM_MDI_VELOCITY" />
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_MDI_ACC" />
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_MDI_DEC" />
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_MDI_MOD" />
+                  <DataItem DataType="Unsigned32" TextId="IDT_DATAITEM_HOME_DIST" />
+                </Output>
+              </IOData>
+               <ModuleInfo>
+                 <Name TextId="IDT_SM_NAME_TEL352" />
+                 <InfoText TextId="IDT_SM_INFO_TEL352" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+		<!--standard telegram 353: 2/2 PZD -->
+        <ModuleItem ID="IDM_AKD353" ModuleIdentNumber="0x00000161">
+          <ModuleInfo>
+            <Name TextId="IDT_MOD_NAME_TEL353" />
+            <InfoText TextId="IDT_MOD_INFO_TEL353" />
+            <HardwareRelease Value="1.0" />
+            <SoftwareRelease Value="1.0" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="IDS_353" SubmoduleIdentNumber="0x00000161" API="0" FixedInSubslots="1" PROFIsafeSupported="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ZSW1" />
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_AKTSATZ" />
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ZSW2" />
+                  <DataItem DataType="Unsigned32" TextId="IDT_DATAITEM_XIST_A" />                  
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_STW1" />
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_SATZANW" />
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_STW2" />
+                  <DataItem DataType="Unsigned32" TextId="IDT_DATAITEM_MDI_TARPOS" />
+                  <DataItem DataType="Unsigned32" TextId="IDT_DATAITEM_MDI_VELOCITY" />
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_MDI_ACC" />
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_MDI_DEC" />
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_MDI_MOD" />
+                  <DataItem DataType="Unsigned32" TextId="IDT_DATAITEM_HOME_DIST" />
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_HOME_MODE" />
+                </Output>
+              </IOData>
+               <ModuleInfo>
+                 <Name TextId="IDT_SM_NAME_TEL353" />
+                 <InfoText TextId="IDT_SM_INFO_TEL353" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>		
+	   <!--standard telegram 400: 24/24 PZD -->
+		<ModuleItem ID="IDM_AKD400" ModuleIdentNumber="0x190">
+		   <ModuleInfo>
+			  <Name TextId="IDT_MOD_NAME_TEL400"/>
+			  <InfoText TextId="IDT_MOD_INFO_TEL400"/>
+		   </ModuleInfo>
+		   <VirtualSubmoduleList>
+			  <VirtualSubmoduleItem ID="IDS_400" SubmoduleIdentNumber="0x190" API="0" FixedInSubslots="1" PROFIsafeSupported="false">
+				 <IOData IOPS_Length="1" IOCS_Length="1">
+					<Input Consistency="All items consistency">
+					   <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_I_0"/>
+					   <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_I_1"/>
+					   <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_I_2"/>
+					   <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_I_3"/>
+					   <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_I_4"/>
+					   <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_I_5"/>
+					   <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_I_6"/>
+					   <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_I_7"/>
+					   <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_I_8"/>
+					   <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_I_9"/>
+					   <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_I_10"/>
+					   <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_I_11"/>
+					</Input>
+					<Output Consistency="All items consistency">
+					   <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_O_0"/>
+					   <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_O_1"/>
+					   <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_O_2"/>
+					   <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_O_3"/>
+					   <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_O_4"/>
+					   <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_O_5"/>
+					   <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_O_6"/>
+					   <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_O_7"/>
+					   <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_O_8"/>
+					   <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_O_9"/>
+					   <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_O_10"/>
+					   <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_O_11"/>
+					</Output>
+				 </IOData>
+				 <ModuleInfo>
+				  <Name TextId="IDT_SM_NAME_TEL400" />
+				  <InfoText TextId="IDT_SM_INFO_TEL400" />
+				</ModuleInfo>
+			  </VirtualSubmoduleItem>
+		   </VirtualSubmoduleList>
+		</ModuleItem>
+      </ModuleList>
+      <GraphicsList>
+        <GraphicItem GraphicFile="GSDML-0105-0001-AKDV1" ID="1" />
+      </GraphicsList>
+      <ExternalTextList>
+        <PrimaryLanguage>
+		<Text TextId="IDT_TLG_TYPE" Value="Telegram Type" />
+		<Text TextId="IDT_ASSIGN_MODE_VELOCITY_LOOP" Value="Velocity Mode" />
+		<Text TextId="IDT_ASSIGN_MODE_POSITION_LOOP" Value="Position Loop" />
+		<Text TextId="IDT_ASSIGN_MODE_TORQUE" Value="Torque Loop" />
+		<Text TextId="IDT_FAMILY_DESCRIPTION" Value="Portations of Softing's PROFINET IO Device stack to various hardware platforms " />
+		<!-- module text -->
+		<Text TextId="IDT_MOD_NAME_TEL1" Value="Standard telegram 1" />
+		<Text TextId="IDT_MOD_NAME_TEL7" Value="Standard telegram 7" />
+		<Text TextId="IDT_MOD_NAME_TEL9" Value="Standard telegram 9" />
+		<Text TextId="IDT_MOD_NAME_TEL350" Value="AKD specific telegram 350" />
+		<Text TextId="IDT_MOD_NAME_TEL351" Value="AKD specific telegram 351" />
+		<Text TextId="IDT_MOD_NAME_TEL352" Value="AKD specific telegram 352" />
+		<Text TextId="IDT_MOD_NAME_TEL353" Value="AKD specific telegram 353" />
+		<Text TextId="IDT_MOD_NAME_TEL400" Value="AKD specific telegram 400" />                
+		<Text TextId="IDT_MOD_INFO_TEL1" Value="Standard telegram 1, PZD-2/2 " />
+		<Text TextId="IDT_MOD_INFO_TEL7" Value="Standard telegram 7, PZD-2/2 " />
+		<Text TextId="IDT_MOD_INFO_TEL9" Value="Standard telegram 9, PZD-10/5 " />
+		<Text TextId="IDT_MOD_INFO_TEL350" Value="AKD specific telegram 350, PZD-2/3" />
+		<Text TextId="IDT_MOD_INFO_TEL351" Value="AKD specific telegram 351, PZD-2/5" />
+		<Text TextId="IDT_MOD_INFO_TEL352" Value="AKD specific telegram 352, PZD-12/5" />
+		<Text TextId="IDT_MOD_INFO_TEL353" Value="AKD specific telegram 353, PZD-13/5" />		  
+		<Text TextId="IDT_MOD_INFO_TEL400" Value="AKD specific telegram 400, PZD-12/12" />
+		<Text TextId="IDT_SM_NAME_TEL1" Value="Standard telegram 1" />
+		<Text TextId="IDT_SM_INFO_TEL1" Value="Standard telegram 1, PZD-2/2" />
+		<Text TextId="IDT_SM_NAME_TEL7" Value="Standard telegram 7" />
+		<Text TextId="IDT_SM_INFO_TEL7" Value="Standard telegram 7, PZD-2/2" />
+		<Text TextId="IDT_SM_NAME_TEL9" Value="Standard telegram 9" />
+		<Text TextId="IDT_SM_INFO_TEL9" Value="Standard telegram 9, PZD-10/5" />
+		<Text TextId="IDT_SM_NAME_TEL350" Value="AKD specific telegram 350" />
+		<Text TextId="IDT_SM_INFO_TEL350" Value="AKD specific telegram, PZD-2/3" />
+		<Text TextId="IDT_SM_NAME_TEL351" Value="AKD specific telegram 351" />
+		<Text TextId="IDT_SM_INFO_TEL351" Value="AKD specific telegram, PZD-2/5" />
+		<Text TextId="IDT_SM_NAME_TEL352" Value="AKD specific telegram 352" />
+		<Text TextId="IDT_SM_INFO_TEL352" Value="AKD specific telegram, PZD-12/5" />
+		<Text TextId="IDT_SM_NAME_TEL353" Value="AKD specific telegram 353" />
+		<Text TextId="IDT_SM_INFO_TEL353" Value="AKD specific telegram, PZD-13/5" />
+		<Text TextId="IDT_SM_NAME_TEL400" Value="AKD specific telegram 400" />
+		<Text TextId="IDT_SM_INFO_TEL400" Value="AKD specific telegram, PZD-12/12" />
+		<Text TextId="IDT_SM_NAME_PAP" Value="Parameter Access Point" />
+		<Text TextId="IDT_SM_INFO_PAP" Value="Parameter access point" />
+		<!-- Signals -->
+		<Text TextId="IDT_DATAITEM_ACTVAL" Value="Actual value" />
+		<Text TextId="IDT_DATAITEM_REFVAL" Value="Setpoint" />
+		<Text TextId="IDT_DATAITEM_STW1" Value="STW1" />
+		<Text TextId="IDT_DATAITEM_NSOLL_A" Value="NSOLL_A" />
+		<Text TextId="IDT_DATAITEM_ZSW1" Value="ZSW1" />
+		<Text TextId="IDT_DATAITEM_NIST_A" Value="NIST_A" />
+		<Text TextId="IDT_DATAITEM_AKTSATZ" Value="AKTSATZ" />
+		<Text TextId="IDT_DATAITEM_SATZANW" Value="SATZANW" />
+		<Text TextId="IDT_DATAITEM_ZSW2" Value="ZSW2" />
+		<Text TextId="IDT_DATAITEM_XIST_A" Value="XIST_A" />
+		<Text TextId="IDT_DATAITEM_STW2" Value="STW2" />
+		<Text TextId="IDT_DATAITEM_MDI_TARPOS" Value="MDI_TARPOS" />
+		<Text TextId="IDT_DATAITEM_MDI_VELOCITY" Value="MDI_VELCOCITY" />
+		<Text TextId="IDT_DATAITEM_MDI_ACC" Value="MDI_ACC" />
+		<Text TextId="IDT_DATAITEM_MDI_DEC" Value="MDI_DEC" />
+		<Text TextId="IDT_DATAITEM_MDI_MOD" Value="MDI_MOD" />
+		<Text TextId="IDT_DATAITEM_ITISTGLATT" Value="ITIST_GLATT" />
+		<Text TextId="IDT_DATAITEM_HOME_DIST" Value="HOME_DIST" />
+		<Text TextId="IDT_DATAITEM_HOME_MODE" Value="HOME_MODE" />		
+		<Text TextId="IDT_DATAITEM_I_0" Value="Process data word input 1"/>
+		<Text TextId="IDT_DATAITEM_I_1" Value="Process data word input 2"/>
+		<Text TextId="IDT_DATAITEM_I_2" Value="Process data word input 3"/>
+		<Text TextId="IDT_DATAITEM_I_3" Value="Process data word input 4"/>
+		<Text TextId="IDT_DATAITEM_I_4" Value="Process data word input 5"/>
+		<Text TextId="IDT_DATAITEM_I_5" Value="Process data word input 6"/>
+		<Text TextId="IDT_DATAITEM_I_6" Value="Process data word input 7"/>
+		<Text TextId="IDT_DATAITEM_I_7" Value="Process data word input 8"/>
+		<Text TextId="IDT_DATAITEM_I_8" Value="Process data word input 9"/>
+		<Text TextId="IDT_DATAITEM_I_9" Value="Process data word input 10"/>
+		<Text TextId="IDT_DATAITEM_I_10" Value="Process data word input 11"/>
+		<Text TextId="IDT_DATAITEM_I_11" Value="Process data word input 12"/>
+		<Text TextId="IDT_DATAITEM_I_12" Value="Process data word input 13"/>
+		<Text TextId="IDT_DATAITEM_I_13" Value="Process data word input 14"/>
+		<Text TextId="IDT_DATAITEM_I_14" Value="Process data word input 15"/>
+		<Text TextId="IDT_DATAITEM_I_15" Value="Process data word input 16"/>
+		<Text TextId="IDT_DATAITEM_O_0" Value="Process data word output 1"/>
+		<Text TextId="IDT_DATAITEM_O_1" Value="Process data word output 2"/>
+		<Text TextId="IDT_DATAITEM_O_2" Value="Process data word output 3"/>
+		<Text TextId="IDT_DATAITEM_O_3" Value="Process data word output 4"/>
+		<Text TextId="IDT_DATAITEM_O_4" Value="Process data word output 5"/>
+		<Text TextId="IDT_DATAITEM_O_5" Value="Process data word output 6"/>
+		<Text TextId="IDT_DATAITEM_O_6" Value="Process data word output 7"/>
+		<Text TextId="IDT_DATAITEM_O_7" Value="Process data word output 8"/>
+		<Text TextId="IDT_DATAITEM_O_8" Value="Process data word output 9"/>
+		<Text TextId="IDT_DATAITEM_O_9" Value="Process data word output 10"/>
+		<Text TextId="IDT_DATAITEM_O_10" Value="Process data word output 11"/>
+		<Text TextId="IDT_DATAITEM_O_11" Value="Process data word output 12"/>
+		<Text TextId="IDT_DATAITEM_O_12" Value="Process data word output 13"/>
+		<Text TextId="IDT_DATAITEM_O_13" Value="Process data word output 14"/>
+		<Text TextId="IDT_DATAITEM_O_14" Value="Process data word output 15"/>
+		<Text TextId="IDT_DATAITEM_O_15" Value="Process data word output 16"/>
+		<!-- DAP text -->
+		<Text TextId="IDT_FamilyDescription" Value=" AKD drives" />
+		<Text TextId="IDT_MOD_NAME_DAP1" Value="AKD-PN-DEVICE" />
+		<Text TextId="IDT_INFO_DAP1" Value="Device AKD drive with PROFINET IO functionality (RT, cyclic and acyclic communication) " />
+		<Text TextId="IDT_Interface" Value="PROFINET " />
+		<Text TextId="IDT_Port1" Value="Port 1" />
+		<Text TextId="IDT_Port2" Value="Port 2" />
+		<Text TextId="IDT_SS_Interface" Value="Interface" />
+		<Text TextId="IDT_SS_Port1" Value="X1" />
+		<Text TextId="IDT_SS_Port2" Value="X2" />
+		</PrimaryLanguage>
+		<Language xml:lang="de">
+		<Text TextId="IDT_TLG_TYPE" Value="Telegramm Typ" />
+		<Text TextId="IDT_ASSIGN_MODE_VELOCITY_LOOP" Value="Drehzahlregelung" />
+		<Text TextId="IDT_ASSIGN_MODE_POSITION_LOOP" Value="Positionsregelung" />
+		<Text TextId="IDT_ASSIGN_MODE_TORQUE" Value="Momentenregelung" />
+		<Text TextId="IDT_FAMILY_DESCRIPTION" Value="Portations of Softing's PROFINET IO Device stack to various hardware platforms " />
+		<!-- module text -->
+		<Text TextId="IDT_MOD_NAME_TEL1" Value="Standard Telegramm 1" />
+		<Text TextId="IDT_MOD_NAME_TEL7" Value="Standard Telegramm 7" />
+		<Text TextId="IDT_MOD_NAME_TEL9" Value="Standard Telegramm 9" />
+		<Text TextId="IDT_MOD_NAME_TEL350" Value="AKD spezifisches Telegramm 350" />
+		<Text TextId="IDT_MOD_NAME_TEL351" Value="AKD spezifisches Telegramm 351" />
+		<Text TextId="IDT_MOD_NAME_TEL352" Value="AKD spezifisches Telegramm 352" />
+		<Text TextId="IDT_MOD_NAME_TEL353" Value="AKD spezifisches Telegramm 353" />		  
+		<Text TextId="IDT_MOD_NAME_TEL400" Value="AKD spezifisches Telegram 400" />
+		<Text TextId="IDT_MOD_INFO_TEL1" Value="Standard Telegramm 1: Drehzahlregelung, PZD-Länge 2/2 Worte" />
+		<Text TextId="IDT_MOD_INFO_TEL7" Value="Standard Telegramm 7: Positionsregelung, PZD-2/2" />
+		<Text TextId="IDT_MOD_INFO_TEL9" Value="Standard Telegramm 9: Positionsregelung, PZD-10/5" />
+		<Text TextId="IDT_MOD_INFO_TEL350" Value="AKD spezifisches Telegramm 350, PZD-Länge PZD 2/3 Worte" />
+		<Text TextId="IDT_MOD_INFO_TEL351" Value="AKD spezifisches Telegramm 351, PZD-Länge PZD 2/5 Worte" />
+		<Text TextId="IDT_MOD_INFO_TEL352" Value="AKD spezifisches Telegramm 352, PZD-Länge PZD 12/5 Worte" />
+		<Text TextId="IDT_MOD_INFO_TEL353" Value="AKD spezifisches Telegramm 353, PZD-Länge PZD 13/5 Worte" />		  
+		<Text TextId="IDT_MOD_INFO_TEL400" Value="AKD spezifisches Telegramm 400, PZD-Länge PZD 12/12 Worte" />        
+		<Text TextId="IDT_SM_NAME_TEL1" Value="Standard Telegramm 1" />
+		<Text TextId="IDT_SM_NAME_TEL7" Value="Standard Telegramm 7" />
+		<Text TextId="IDT_SM_NAME_TEL9" Value="Standard Telegra0m 9" />
+		<Text TextId="IDT_SM_INFO_TEL1" Value="Standard Telegramm 1: Drehzahlregelung, PZD-Länge 2/2 Worte" />
+		<Text TextId="IDT_SM_INFO_TEL7" Value="Standard Telegramm 7: Positionsregelung, PZD-2/2" />
+		<Text TextId="IDT_SM_INFO_TEL9" Value="Standard Telegramm 9: Positionsregelung, PZD-10/5" />
+		<Text TextId="IDT_SM_NAME_TEL350" Value="AKD spezifisches Telegramm 350" />
+		<Text TextId="IDT_SM_INFO_TEL350" Value="AKD spezifisches Telegramm 350, PZD-Länge PZD 2/3 Worte" />
+		<Text TextId="IDT_SM_NAME_TEL351" Value="AKD spezifisches Telegramm 351" />
+		<Text TextId="IDT_SM_INFO_TEL351" Value="AKD spezifisches Telegramm 351, PZD-Länge PZD 2/5 Worte" />
+		<Text TextId="IDT_SM_NAME_TEL352" Value="AKD spezifisches Telegramm 352" />
+		<Text TextId="IDT_SM_INFO_TEL352" Value="AKD spezifisches Telegramm 352, PZD-Länge PZD 12/5 Worte" />
+		<Text TextId="IDT_SM_NAME_TEL353" Value="AKD spezifisches Telegramm 353" />
+		<Text TextId="IDT_SM_INFO_TEL353" Value="AKD spezifisches Telegramm 353, PZD-Länge PZD 13/5 Worte" />
+		<Text TextId="IDT_SM_NAME_TEL400" Value="AKD spezifisches Telegramm 400" />
+		<Text TextId="IDT_SM_INFO_TEL400" Value="AKD spezifisches Telegramm 400, PZD-Länge PZD 12/12 Worte" />
+		<Text TextId="IDT_SM_NAME_PAP" Value="Parameter Access Point" />
+		<Text TextId="IDT_SM_INFO_PAP" Value="Zugangspunkt für Antriebsparameter" />
+		<!-- Signals -->
+		<Text TextId="IDT_DATAITEM_ACTVAL" Value="Zustandswort oder Istwert" />
+		<Text TextId="IDT_DATAITEM_REFVAL" Value="Steuerwort oder Sollwert" />
+		<Text TextId="IDT_DATAITEM_STW1" Value="STW1" />
+		<Text TextId="IDT_DATAITEM_NSOLL_A" Value="NSOLL_A" />
+		<Text TextId="IDT_DATAITEM_ZSW1" Value="ZSW1" />
+		<Text TextId="IDT_DATAITEM_NIST_A" Value="NIST_A" />
+		<Text TextId="IDT_DATAITEM_AKTSATZ" Value="AKTSATZ" />
+		<Text TextId="IDT_DATAITEM_SATZANW" Value="SATZANW" />
+		<Text TextId="IDT_DATAITEM_ZSW2" Value="ZSW2" />
+		<Text TextId="IDT_DATAITEM_XIST_A" Value="XIST_A" />
+		<Text TextId="IDT_DATAITEM_STW2" Value="STW2" />
+		<Text TextId="IDT_DATAITEM_MDI_TARPOS" Value="MDI_TARPOS" />
+		<Text TextId="IDT_DATAITEM_MDI_VELOCITY" Value="MDI_VELCOCITY" />
+		<Text TextId="IDT_DATAITEM_MDI_ACC" Value="MDI_ACC" />
+		<Text TextId="IDT_DATAITEM_MDI_DEC" Value="MDI_DEC" />
+		<Text TextId="IDT_DATAITEM_MDI_MOD" Value="MDI_MOD" />
+		<Text TextId="IDT_DATAITEM_ITISTGLATT" Value="ITIST_GLATT" />
+		<Text TextId="IDT_DATAITEM_HOME_DIST" Value="HOME_DIST" />
+		<Text TextId="IDT_DATAITEM_HOME_MODE" Value="HOME_MODE" />		
+		<Text TextId="IDT_DATAITEM_I_0" Value="Process data word input 1"/>
+		<Text TextId="IDT_DATAITEM_I_1" Value="Process data word input 2"/>
+		<Text TextId="IDT_DATAITEM_I_2" Value="Process data word input 3"/>
+		<Text TextId="IDT_DATAITEM_I_3" Value="Process data word input 4"/>
+		<Text TextId="IDT_DATAITEM_I_4" Value="Process data word input 5"/>
+		<Text TextId="IDT_DATAITEM_I_5" Value="Process data word input 6"/>
+		<Text TextId="IDT_DATAITEM_I_6" Value="Process data word input 7"/>
+		<Text TextId="IDT_DATAITEM_I_7" Value="Process data word input 8"/>
+		<Text TextId="IDT_DATAITEM_I_8" Value="Process data word input 9"/>
+		<Text TextId="IDT_DATAITEM_I_9" Value="Process data word input 10"/>
+		<Text TextId="IDT_DATAITEM_I_10" Value="Process data word input 11"/>
+		<Text TextId="IDT_DATAITEM_I_11" Value="Process data word input 12"/>
+		<Text TextId="IDT_DATAITEM_I_12" Value="Process data word input 13"/>
+		<Text TextId="IDT_DATAITEM_I_13" Value="Process data word input 14"/>
+		<Text TextId="IDT_DATAITEM_I_14" Value="Process data word input 15"/>
+		<Text TextId="IDT_DATAITEM_I_15" Value="Process data word input 16"/>
+		<Text TextId="IDT_DATAITEM_O_0" Value="Process data word output 1"/>
+		<Text TextId="IDT_DATAITEM_O_1" Value="Process data word output 2"/>
+		<Text TextId="IDT_DATAITEM_O_2" Value="Process data word output 3"/>
+		<Text TextId="IDT_DATAITEM_O_3" Value="Process data word output 4"/>
+		<Text TextId="IDT_DATAITEM_O_4" Value="Process data word output 5"/>
+		<Text TextId="IDT_DATAITEM_O_5" Value="Process data word output 6"/>
+		<Text TextId="IDT_DATAITEM_O_6" Value="Process data word output 7"/>
+		<Text TextId="IDT_DATAITEM_O_7" Value="Process data word output 8"/>
+		<Text TextId="IDT_DATAITEM_O_8" Value="Process data word output 9"/>
+		<Text TextId="IDT_DATAITEM_O_9" Value="Process data word output 10"/>
+		<Text TextId="IDT_DATAITEM_O_10" Value="Process data word output 11"/>
+		<Text TextId="IDT_DATAITEM_O_11" Value="Process data word output 12"/>
+		<Text TextId="IDT_DATAITEM_O_12" Value="Process data word output 13"/>
+		<Text TextId="IDT_DATAITEM_O_13" Value="Process data word output 14"/>
+		<Text TextId="IDT_DATAITEM_O_14" Value="Process data word output 15"/>
+		<Text TextId="IDT_DATAITEM_O_15" Value="Process data word output 16"/>  
+		<!-- DAP text -->
+		<Text TextId="IDT_FamilyDescription" Value="AKD drives" />
+		<Text TextId="IDT_MOD_NAME_DAP1" Value="AKD-PN-DEVICE" />
+		<Text TextId="IDT_INFO_DAP1" Value="Device AKD-X02407 Antrieb mit PROFINET IO Funktionalität (RT, zyklische und azyklische Kommunikation)  " />
+		<Text TextId="IDT_Interface" Value="PROFINET" />
+		<Text TextId="IDT_Port1" Value="Port 1" />
+		<Text TextId="IDT_Port2" Value="Port 2" />
+		<Text TextId="IDT_SS_Interface" Value="Interface" />
+		<Text TextId="IDT_SS_Port1" Value="X1" />
+		<Text TextId="IDT_SS_Port2" Value="X2" />
+        </Language>
+      </ExternalTextList>
+    </ApplicationProcess>
+  </ProfileBody>
+</ISO15745Profile>

@@ -1,0 +1,1409 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--  PROFINET I/O description of Rexroth's Weld Timer PSS6000-->
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\XSD\GSDML-DeviceProfile-v2.2.xsd">
+  <ProfileHeader>
+    <ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+    <ProfileRevision>1.00</ProfileRevision>
+    <ProfileName>Device Profile for PROFINET Devices</ProfileName>
+    <ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+    <ProfileClassID>Device</ProfileClassID>
+    <ISO15745Reference>
+      <ISO15745Part>4</ISO15745Part>
+      <ISO15745Edition>1</ISO15745Edition>
+      <ProfileTechnology>GSDML</ProfileTechnology>
+    </ISO15745Reference>
+  </ProfileHeader>
+  <ProfileBody>
+    <DeviceIdentity VendorID="0x011F"
+                    DeviceID="0x0001">
+      <InfoText TextId="DEVICE_TEXT" />
+      <VendorName Value="Rexroth" />
+    </DeviceIdentity>
+    <DeviceFunction>
+      <Family MainFamily="General"
+              ProductFamily="Welding Timers" />
+    </DeviceFunction>
+    <ApplicationProcess>
+      <!-- ============================================================================================ -->
+      <!--   List of Device Access Points (DAP)                                                         -->
+      <!-- ============================================================================================ -->
+      <DeviceAccessPointList>
+        <DeviceAccessPointItem ID="DAP_V1"
+                               PhysicalSlots="0..1"
+                               ModuleIdentNumber="0xA0000000"
+                               MinDeviceInterval="64"
+                               ImplementationType="NP30"
+                               DNS_CompatibleName="PSS6000WeldTimer"
+                               ExtendedAddressAssignmentSupported="true"
+                               FixedInSlots="0"
+                               ObjectUUID_LocalIndex="1">
+          <ModuleInfo CategoryRef="CAT_REF_MIGRATION_DAP">
+            <Name TextId="MODULE_TEXT" />
+            <InfoText TextId="MODULE_INFO" />
+            <VendorName Value="Rexroth" />
+            <OrderNumber Value="PSS6000" />
+            <HardwareRelease Value="V1.0" />
+            <SoftwareRelease Value="V1.0" />
+          </ModuleInfo>
+          <IOConfigData MaxInputLength="256"
+                        MaxOutputLength="256" />
+          <UseableModules>
+            <!--References to the ModuleList-->
+            <ModuleItemRef ModuleItemTarget="0"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="1"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="2"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="3"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="4"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="5"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="6"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="7"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="8"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="9"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="10"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="11"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="12"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="13"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="14"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="15"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="16"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="17"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="18"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="19"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="20"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="21"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="22"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="23"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="24"
+                           AllowedInSlots="1" />
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="DAP_V1"
+                                  SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1"
+                      IOCS_Length="1" />
+              <RecordDataList />
+              <ModuleInfo>
+                <Name TextId="T_ID_DAP_V1" />
+                <InfoText TextId="T_ID_V1_DEV_DESCRIPTION" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <Graphics>
+            <GraphicItemRef Type="DeviceSymbol"
+                            GraphicItemTarget="IDG_1" />
+          </Graphics>
+        </DeviceAccessPointItem>
+        <DeviceAccessPointItem ID="DAP_V2"
+                               PhysicalSlots="0..1"
+                               ModuleIdentNumber="0xA0000000"
+                               MinDeviceInterval="64"
+                               ImplementationType="NP30"
+                               DNS_CompatibleName="PSS6000WeldTimer"
+                               ExtendedAddressAssignmentSupported="true"
+                               FixedInSlots="0"
+                               ObjectUUID_LocalIndex="1"
+                               RequiredSchemaVersion="V2.2">
+          <ModuleInfo>
+            <Name TextId="MODULE_TEXT_1P" />
+            <InfoText TextId="MODULE_INFO" />
+            <VendorName Value="Rexroth" />
+            <OrderNumber Value="PSS6000" />
+            <HardwareRelease Value="V1" />
+            <SoftwareRelease Value="V1.11" />
+          </ModuleInfo>
+          <SubslotList>
+            <SubslotItem SubslotNumber="32768"
+                         TextId="T_ID_SS_INTERFACE" />
+            <SubslotItem SubslotNumber="32769"
+                         TextId="T_ID_SS_PORT1" />
+          </SubslotList>
+          <IOConfigData MaxInputLength="256"
+                        MaxOutputLength="256" />
+          <UseableModules>
+            <ModuleItemRef ModuleItemTarget="0"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="1"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="2"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="3"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="4"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="5"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="6"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="7"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="8"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="9"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="10"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="11"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="12"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="13"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="14"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="15"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="16"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="17"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="18"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="19"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="20"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="21"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="22"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="23"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="24"
+                           AllowedInSlots="1" />
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="DAP_V2"
+                                  SubmoduleIdentNumber="0x00000000"
+                                  API="0"
+                                  Writeable_IM_Records="1 2 3">
+              <IOData IOPS_Length="1"
+                      IOCS_Length="1" />
+              <RecordDataList />
+              <ModuleInfo>
+                <Name TextId="T_ID_DAP_V2" />
+                <InfoText TextId="T_ID_V2_DEV_DESCRIPTION" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem SubslotNumber="32768"
+                                    SubmoduleIdentNumber="0x0001"
+                                    SupportedRT_Classes="RT_CLASS_1"
+                                    TextId="T_ID_DAP_INTERFACE_MODULE"
+                                    DCP_HelloSupported="false"
+                                    IsochroneModeSupported="false"
+                                    SupportedMibs=""
+                                    SupportedProtocols="SNMP;LLDP">
+              <ApplicationRelations NumberOfAdditionalInputCR="0"
+                                    NumberOfAdditionalMulticastProviderCR="0"
+                                    NumberOfAdditionalOutputCR="0"
+                                    NumberOfMulticastConsumerCR="0"
+                                    PullModuleAlarmSupported="false">
+                <TimingProperties SendClock="32 64 128"
+                                  ReductionRatio="1 2 4 8 16 32 64 128 256 512" />
+              </ApplicationRelations>
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem SubslotNumber="32769"
+                               SubmoduleIdentNumber="0x0002"
+                               MAUType="100BASETXFD"
+                               TextId="T_ID_PORT" />
+          </SystemDefinedSubmoduleList>
+          <Graphics>
+            <GraphicItemRef Type="DeviceSymbol"
+                            GraphicItemTarget="IDG_1" />
+          </Graphics>
+        </DeviceAccessPointItem>
+        <DeviceAccessPointItem ID="DAP_V2_2"
+                               PhysicalSlots="0..1"
+                               ModuleIdentNumber="0xA0000000"
+                               MinDeviceInterval="64"
+                               ImplementationType="NP30"
+                               DNS_CompatibleName="PSS6000WeldTimer"
+                               ExtendedAddressAssignmentSupported="true"
+                               FixedInSlots="0"
+                               ObjectUUID_LocalIndex="1"
+                               RequiredSchemaVersion="V2.2">
+          <ModuleInfo>
+            <Name TextId="MODULE_TEXT_2P" />
+            <InfoText TextId="MODULE_INFO" />
+            <VendorName Value="Rexroth" />
+            <OrderNumber Value="PSS6000" />
+            <HardwareRelease Value="V2" />
+            <SoftwareRelease Value="V1.13.1" />
+          </ModuleInfo>
+          <SubslotList>
+            <SubslotItem SubslotNumber="32768"
+                         TextId="T_ID_SS_INTERFACE" />
+            <SubslotItem SubslotNumber="32769"
+                         TextId="T_ID_SS_PORT1" />
+            <SubslotItem SubslotNumber="32770"
+                         TextId="T_ID_SS_PORT2" />
+          </SubslotList>
+          <IOConfigData MaxInputLength="256"
+                        MaxOutputLength="256" />
+          <UseableModules>
+            <ModuleItemRef ModuleItemTarget="0"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="1"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="2"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="3"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="4"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="5"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="6"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="7"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="8"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="9"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="10"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="11"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="12"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="13"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="14"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="15"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="16"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="17"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="18"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="19"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="20"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="21"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="22"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="23"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="24"
+                           AllowedInSlots="1" />
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="DAP_V2_2"
+                                  SubmoduleIdentNumber="0x00000000"
+                                  API="0"
+                                  Writeable_IM_Records="1 2 3">
+              <IOData IOPS_Length="1"
+                      IOCS_Length="1" />
+              <RecordDataList />
+              <ModuleInfo>
+                <Name TextId="T_ID_DAP_V2" />
+                <InfoText TextId="T_ID_V2_DEV_DESCRIPTION" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem SubslotNumber="32768"
+                                    SubmoduleIdentNumber="0x0001"
+                                    SupportedRT_Classes="RT_CLASS_1"
+                                    TextId="T_ID_DAP_INTERFACE_MODULE"
+                                    DCP_HelloSupported="false"
+                                    IsochroneModeSupported="false"
+                                    SupportedMibs=""
+                                    SupportedProtocols="SNMP;LLDP">
+              <ApplicationRelations NumberOfAdditionalInputCR="0"
+                                    NumberOfAdditionalMulticastProviderCR="0"
+                                    NumberOfAdditionalOutputCR="0"
+                                    NumberOfMulticastConsumerCR="0"
+                                    PullModuleAlarmSupported="false">
+                <TimingProperties SendClock="32 64 128"
+                                  ReductionRatio="1 2 4 8 16 32 64 128 256 512" />
+              </ApplicationRelations>
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem SubslotNumber="32769"
+                               SubmoduleIdentNumber="0x0002"
+                               MAUType="100BASETXFD"
+                               TextId="T_ID_PORT" />
+            <PortSubmoduleItem SubslotNumber="32770"
+                               SubmoduleIdentNumber="0x0003"
+                               MAUType="100BASETXFD"
+                               TextId="T_ID_PORT2" />
+          </SystemDefinedSubmoduleList>
+          <Graphics>
+            <GraphicItemRef Type="DeviceSymbol"
+                            GraphicItemTarget="IDG_1" />
+          </Graphics>
+        </DeviceAccessPointItem>
+        <DeviceAccessPointItem ID="DAP_V2_RT_FO"
+                               PhysicalSlots="0..1"
+                               ModuleIdentNumber="0xA0000000"
+                               MinDeviceInterval="32"
+                               ImplementationType="ERTEC200"
+                               DNS_CompatibleName="PSS6000WeldTimer"
+                               ExtendedAddressAssignmentSupported="true"
+                               FixedInSlots="0"
+                               ObjectUUID_LocalIndex="1"
+                               RequiredSchemaVersion="V2.2"
+                               MaxSupportedRecordSize="4068">
+          <ModuleInfo>
+            <Name TextId="MODULE_TEXT_2P_FO" />
+            <InfoText TextId="MODULE_INFO" />
+            <VendorName Value="Rexroth" />
+            <OrderNumber Value="PSS6000" />
+            <HardwareRelease Value="V1" />
+            <SoftwareRelease Value="V3.00" />
+          </ModuleInfo>
+          <SubslotList>
+            <SubslotItem SubslotNumber="32768"
+                         TextId="T_ID_SS_INTERFACE" />
+            <SubslotItem SubslotNumber="32769"
+                         TextId="T_ID_SS_PORT1" />
+            <SubslotItem SubslotNumber="32770"
+                         TextId="T_ID_SS_PORT2" />
+          </SubslotList>
+          <IOConfigData MaxInputLength="256"
+                        MaxOutputLength="256" />
+          <UseableModules>
+            <ModuleItemRef ModuleItemTarget="0"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="1"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="2"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="3"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="4"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="5"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="6"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="7"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="8"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="9"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="10"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="11"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="12"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="13"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="14"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="15"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="16"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="17"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="18"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="19"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="20"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="21"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="22"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="23"
+                           AllowedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="24"
+                           AllowedInSlots="1" />
+         </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="DAP_V2_RT_FO"
+                                  SubmoduleIdentNumber="0x00000000"
+                                  Writeable_IM_Records="1 2 3 4">
+              <IOData />
+              <RecordDataList />
+              <ModuleInfo>
+                <Name TextId="T_ID_DAP_V2_PIR" />
+                <InfoText TextId="T_ID_V2_RT_DEV_DESCRIPTION_FO" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem SubslotNumber="32768"
+                                    SubmoduleIdentNumber="0x0001"
+                                    SupportedRT_Classes="RT_CLASS_1;RT_CLASS_2;RT_CLASS_3"
+                                    TextId="T_ID_DAP_INTERFACE_MODULE"
+                                    SupportedProtocols="SNMP;LLDP"
+                                    SupportedMibs="MIB2"
+                                    NetworkComponentDiagnosisSupported="true"
+                                    DCP_HelloSupported="false">
+              <RT_Class3Properties MaxBridgeDelay="2920"
+                                   MaxNumberIR_FrameData="400" />
+              <SynchronisationMode SupportedRole="SyncSlave"
+                                   MaxLocalJitter="50"
+                                   T_PLL_MAX="1000"
+                                   SupportedSyncProtocols="PTCP" />
+              <ApplicationRelations NumberOfAdditionalInputCR="0"
+                                    NumberOfAdditionalMulticastProviderCR="0"
+                                    NumberOfAdditionalOutputCR="0"
+                                    NumberOfMulticastConsumerCR="0">
+                <TimingProperties SendClock="32"
+                                  ReductionRatio="1 2 4 8 16 32 64 128 256 512" />
+                <RT_Class3TimingProperties SendClock="32"
+                                           ReductionRatio="1 2 4 8 16" />
+              </ApplicationRelations>
+	      <MediaRedundancy  SupportedRole="Client"/>
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem SubslotNumber="32769"
+                               SubmoduleIdentNumber="0x0002"
+                               MAUTypes="54"
+                               FiberOpticTypes="4 5"
+                               TextId="T_ID_PORT_FO"
+                               MaxPortRxDelay="182"
+                               MaxPortTxDelay="108"
+                               PortDeactivationSupported="true"
+                               PowerBudgetControlSupported="true"
+                               LinkStateDiagnosisCapability="Up+Down"
+                               SupportsRingportConfig="false"
+                               IsDefaultRingport="true" />
+            <PortSubmoduleItem SubslotNumber="32770"
+                               SubmoduleIdentNumber="0x0003"
+                               MAUTypes="54"
+                               FiberOpticTypes="4 5"
+                               TextId="T_ID_PORT_FO"
+                               MaxPortRxDelay="182"
+                               MaxPortTxDelay="108"
+                               PortDeactivationSupported="true"
+                               PowerBudgetControlSupported="true"
+                               LinkStateDiagnosisCapability="Up+Down"
+                               SupportsRingportConfig="false"
+                               IsDefaultRingport="true" />
+          </SystemDefinedSubmoduleList>
+          <Graphics>
+            <GraphicItemRef Type="DeviceSymbol"
+                            GraphicItemTarget="IDG_1" />
+          </Graphics>
+        </DeviceAccessPointItem>
+      </DeviceAccessPointList>
+      <!-- List of modules -->
+      <ModuleList>
+        <!--Bidirectional modules-->
+        <ModuleItem ID="1"
+                    ModuleIdentNumber="0x00000001">
+          <ModuleInfo CategoryRef="CATEGORY_TIMER">
+            <Name TextId="MODULNAME_01" />
+            <InfoText TextId="MODULINFO_01" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="1"
+                                  SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1"
+                      IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="18"
+                            TextId="INPUT" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="18"
+                            TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="MODULNAME_01" />
+                <InfoText TextId="MODULINFO_01" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="2"
+                    ModuleIdentNumber="0x000002D4">
+          <ModuleInfo CategoryRef="CATEGORY_TIMER">
+            <Name TextId="MODULNAME_02" />
+            <InfoText TextId="MODULINFO_02" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="2"
+                                  SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1"
+                      IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="10"
+                            TextId="INPUT" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="20"
+                            TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="MODULNAME_02" />
+                <InfoText TextId="MODULINFO_02" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="3"
+                    ModuleIdentNumber="0x000002E5">
+          <ModuleInfo CategoryRef="CATEGORY_TIMER">
+            <Name TextId="MODULNAME_03" />
+            <InfoText TextId="MODULINFO_03" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="3"
+                                  SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1"
+                      IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="6"
+                            TextId="INPUT" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="6"
+                            TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="MODULNAME_03" />
+                <InfoText TextId="MODULINFO_03" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="4"
+                    ModuleIdentNumber="0x000002D8">
+          <ModuleInfo CategoryRef="CATEGORY_TIMER">
+            <Name TextId="MODULNAME_04" />
+            <InfoText TextId="MODULINFO_04" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="4"
+                                  SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1"
+                      IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="18"
+                            TextId="INPUT" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="26"
+                            TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="MODULNAME_04" />
+                <InfoText TextId="MODULINFO_04" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="5"
+                    ModuleIdentNumber="0x000002EF">
+          <ModuleInfo CategoryRef="CATEGORY_TIMER">
+            <Name TextId="MODULNAME_05" />
+            <InfoText TextId="MODULINFO_05" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="5"
+                                  SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1"
+                      IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="18"
+                            TextId="INPUT" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="18"
+                            TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="MODULNAME_05" />
+                <InfoText TextId="MODULINFO_05" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="6"
+                    ModuleIdentNumber="0x000002F5">
+          <ModuleInfo CategoryRef="CATEGORY_TIMER">
+            <Name TextId="MODULNAME_06" />
+            <InfoText TextId="MODULINFO_06" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="6"
+                                  SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1"
+                      IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="6"
+                            TextId="INPUT" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="6"
+                            TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="MODULNAME_06" />
+                <InfoText TextId="MODULINFO_06" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="7"
+                    ModuleIdentNumber="0x000002D9">
+          <ModuleInfo CategoryRef="CATEGORY_TIMER">
+            <Name TextId="MODULNAME_07" />
+            <InfoText TextId="MODULINFO_07" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="7"
+                                  SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1"
+                      IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="20"
+                            TextId="INPUT" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="26"
+                            TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="MODULNAME_07" />
+                <InfoText TextId="MODULINFO_07" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="8"
+                    ModuleIdentNumber="0x000002F6">
+          <ModuleInfo CategoryRef="CATEGORY_TIMER">
+            <Name TextId="MODULNAME_08" />
+            <InfoText TextId="MODULINFO_08" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="8"
+                                  SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1"
+                      IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="6"
+                            TextId="INPUT" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="6"
+                            TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="MODULNAME_08" />
+                <InfoText TextId="MODULINFO_08" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="9"
+                    ModuleIdentNumber="0x000002D7">
+          <ModuleInfo CategoryRef="CATEGORY_TIMER">
+            <Name TextId="MODULNAME_09" />
+            <InfoText TextId="MODULINFO_09" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="9"
+                                  SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1"
+                      IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="8"
+                            TextId="INPUT" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="8"
+                            TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="MODULNAME_09" />
+                <InfoText TextId="MODULINFO_09" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="10"
+                    ModuleIdentNumber="0x000002F7">
+          <ModuleInfo CategoryRef="CATEGORY_TIMER">
+            <Name TextId="MODULNAME_10" />
+            <InfoText TextId="MODULINFO_10" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="10"
+                                  SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1"
+                      IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="16"
+                            TextId="INPUT" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="16"
+                            TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="MODULNAME_10" />
+                <InfoText TextId="MODULINFO_10" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="11"
+                    ModuleIdentNumber="0x000002F9">
+          <ModuleInfo CategoryRef="CATEGORY_TIMER">
+            <Name TextId="MODULNAME_11" />
+            <InfoText TextId="MODULINFO_11" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="11"
+                                  SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1"
+                      IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="22"
+                            TextId="INPUT" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="26"
+                            TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="MODULNAME_11" />
+                <InfoText TextId="MODULINFO_11" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="12"
+                    ModuleIdentNumber="0x000002D5">
+          <ModuleInfo CategoryRef="CATEGORY_TIMER">
+            <Name TextId="MODULNAME_12" />
+            <InfoText TextId="MODULINFO_12" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="12"
+                                  SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1"
+                      IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="8"
+                            TextId="INPUT" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="8"
+                            TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="MODULNAME_12" />
+                <InfoText TextId="MODULINFO_12" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="13"
+                    ModuleIdentNumber="0x000002F0">
+          <ModuleInfo CategoryRef="CATEGORY_TIMER">
+            <Name TextId="MODULNAME_13" />
+            <InfoText TextId="MODULINFO_13" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="13"
+                                  SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1"
+                      IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="18"
+                            TextId="INPUT" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="18"
+                            TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="MODULNAME_13" />
+                <InfoText TextId="MODULINFO_13" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="14"
+                    ModuleIdentNumber="0x000002DC">
+          <ModuleInfo CategoryRef="CATEGORY_TIMER">
+            <Name TextId="MODULNAME_14" />
+            <InfoText TextId="MODULINFO_14" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="14"
+                                  SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1"
+                      IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="18"
+                            TextId="INPUT" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="18"
+                            TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="MODULNAME_14" />
+                <InfoText TextId="MODULINFO_14" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="15"
+                    ModuleIdentNumber="0x000002EB">
+          <ModuleInfo CategoryRef="CATEGORY_TIMER">
+            <Name TextId="MODULNAME_15" />
+            <InfoText TextId="MODULINFO_15" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="15"
+                                  SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1"
+                      IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="6"
+                            TextId="INPUT" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="6"
+                            TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="MODULNAME_15" />
+                <InfoText TextId="MODULINFO_15" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="16"
+                    ModuleIdentNumber="0x0000030A">
+          <ModuleInfo CategoryRef="CATEGORY_TIMER">
+            <Name TextId="MODULNAME_16" />
+            <InfoText TextId="MODULINFO_16" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="16"
+                                  SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1"
+                      IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="32"
+                            TextId="INPUT" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="32"
+                            TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="MODULNAME_16" />
+                <InfoText TextId="MODULINFO_16" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="17"
+                    ModuleIdentNumber="0x0000030C">
+          <ModuleInfo CategoryRef="CATEGORY_TIMER">
+            <Name TextId="MODULNAME_17" />
+            <InfoText TextId="MODULINFO_17" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="17"
+                                  SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1"
+                      IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="22"
+                            TextId="INPUT" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="26"
+                            TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="MODULNAME_17" />
+                <InfoText TextId="MODULINFO_17" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="18"
+                    ModuleIdentNumber="0x000002FA">
+          <ModuleInfo CategoryRef="CATEGORY_TIMER">
+            <Name TextId="MODULNAME_18" />
+            <InfoText TextId="MODULINFO_18" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="18"
+                                  SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1"
+                      IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="20"
+                            TextId="INPUT" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="26"
+                            TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="MODULNAME_18" />
+                <InfoText TextId="MODULINFO_18" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="19"
+                    ModuleIdentNumber="0x000002C6">
+          <ModuleInfo CategoryRef="CATEGORY_TIMER">
+            <Name TextId="MODULNAME_19" />
+            <InfoText TextId="MODULINFO_19" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="19"
+                                  SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1"
+                      IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="8"
+                            TextId="INPUT" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="8"
+                            TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="MODULNAME_19" />
+                <InfoText TextId="MODULINFO_19" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="20"
+                    ModuleIdentNumber="0x00000313">
+          <ModuleInfo CategoryRef="CATEGORY_TIMER">
+            <Name TextId="MODULNAME_20" />
+            <InfoText TextId="MODULINFO_20" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="20"
+                                  SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1"
+                      IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="6"
+                            TextId="INPUT" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="6"
+                            TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="MODULNAME_20" />
+                <InfoText TextId="MODULINFO_20" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="21"
+                    ModuleIdentNumber="0x00000315">
+          <ModuleInfo CategoryRef="CATEGORY_TIMER">
+            <Name TextId="MODULNAME_21" />
+            <InfoText TextId="MODULINFO_21" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="21"
+                                  SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1"
+                      IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="16"
+                            TextId="INPUT" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="16"
+                            TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="MODULNAME_21" />
+                <InfoText TextId="MODULINFO_21" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="22"
+                    ModuleIdentNumber="0x0000030E">
+          <ModuleInfo CategoryRef="CATEGORY_TIMER">
+            <Name TextId="MODULNAME_22" />
+            <InfoText TextId="MODULINFO_22" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="22"
+                                  SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1"
+                      IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="18"
+                            TextId="INPUT" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="26"
+                            TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="MODULNAME_22" />
+                <InfoText TextId="MODULINFO_22" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="23"
+                    ModuleIdentNumber="0x000002DA">
+          <ModuleInfo CategoryRef="CATEGORY_TIMER">
+            <Name TextId="MODULNAME_23" />
+            <InfoText TextId="MODULINFO_23" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="23"
+                                  SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1"
+                      IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="10"
+                            TextId="INPUT" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="16"
+                            TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="MODULNAME_23" />
+                <InfoText TextId="MODULINFO_23" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="24"
+                    ModuleIdentNumber="0x000002DE">
+          <ModuleInfo CategoryRef="CATEGORY_TIMER">
+            <Name TextId="MODULNAME_24" />
+            <InfoText TextId="MODULINFO_24" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="24"
+                                  SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1"
+                      IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="18"
+                            TextId="INPUT" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString"
+                            Length="26"
+                            TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="MODULNAME_24" />
+                <InfoText TextId="MODULINFO_24" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <!--Other modules -->
+        <ModuleItem ID="0"
+                    ModuleIdentNumber="0xB0000000">
+          <ModuleInfo CategoryRef="CATEGORY_OTHER">
+            <Name TextId="MODULNAME_EMPTY" />
+            <InfoText TextId="MODULNAME_EMPTY" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="0"
+                                  SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1"
+                      IOCS_Length="1"></IOData>
+              <ModuleInfo>
+                <Name TextId="MODULNAME_EMPTY" />
+                <InfoText TextId="MODULNAME_EMPTY" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+      </ModuleList>
+      <!-- List of graphics -->
+      <GraphicsList>
+        <GraphicItem ID="IDG_1"
+                     GraphicFile="GSDML-011F-0001-Welding_Timers" />
+      </GraphicsList>
+      <!-- List of categorys -->
+      <CategoryList>
+        <CategoryItem ID="CAT_REF_MIGRATION_DAP"
+                      TextId="T_ID_MIGRATION_DAP" />
+        <CategoryItem ID="CATEGORY_TIMER"
+                      TextId="CATEGORY_TIMER" />
+        <CategoryItem ID="CATEGORY_OTHER"
+                      TextId="CATEGORY_OTHER" />
+      </CategoryList>
+      <!-- List of texts -->
+      <ExternalTextList>
+        <PrimaryLanguage>
+          <!--Identification-->
+          <Text TextId="MODULE_TEXT"
+                Value="PSS6000 Weld Timer" />
+          <Text TextId="MODULE_TEXT_1P"
+                Value="PSS6000 Weld Timer (1-Port)" />
+          <Text TextId="MODULE_TEXT_2P"
+                Value="PSS6000 Weld Timer (2-Port)" />
+          <Text TextId="MODULE_TEXT_2P_FO"
+                Value="PSS6000 Weld Timer (2-Port) FO" />
+          <Text TextId="MODULE_INFO"
+                Value="Welding Timer" />
+          <Text TextId="DEVICE_TEXT"
+                Value="Rexroth Weld Timer PSS6000" />
+          <Text TextId="T_ID_V1_DEV_DESCRIPTION"
+                Value="This Device Access Point may be used by IO Controllers that do not support extended PROFINET diagnostics. RT communication is supported" />
+          <Text TextId="T_ID_V2_DEV_DESCRIPTION"
+                Value="This Device Access Point supports RT communication" />
+          <Text TextId="T_ID_V2_RT_DEV_DESCRIPTION_FO"
+                Value=" Supports RT C2 (unsync/sync), and RT C3 (IRT high performance).  Should be used for a fiber optical interface. " />
+          <Text TextId="T_ID_DAP_V1"
+                Value="RT" />
+          <Text TextId="T_ID_DAP_V2"
+                Value="RT" />
+          <Text TextId="T_ID_DAP_V2_PIR"
+                Value="RT" />
+          <Text TextId="T_ID_SS_INTERFACE"
+                Value="X1" />
+          <Text TextId="T_ID_SS_PORT1"
+                Value="P1" />
+          <Text TextId="T_ID_SS_PORT2"
+                Value="P2" />
+          <Text TextId="T_ID_DAP_INTERFACE_MODULE"
+                Value="Interface" />
+          <Text TextId="T_ID_PORT"
+                Value="Port 1" />
+          <Text TextId="T_ID_PORT2"
+                Value="Port 2" />
+          <Text TextId="T_ID_PORT_FO"
+                Value="SC-RJ 100 MBit/s" />
+          <!--Module category-->
+          <Text TextId="T_ID_MIGRATION_DAP"
+                Value="Migration" />
+          <Text TextId="CATEGORY_TIMER"
+                Value="Input/Output modules" />
+          <Text TextId="CATEGORY_OTHER"
+                Value="Other modules" />
+          <!--Bidirectional modules-->
+          <Text TextId="MODULNAME_01"
+                Value="PSI6xxx.750"></Text>
+          <Text TextId="MODULINFO_01"
+                Value="Input/Output 018 bytes"></Text>
+          <Text TextId="MODULNAME_02"
+                Value="PSI6xxx.724"></Text>
+          <Text TextId="MODULINFO_02"
+                Value="Input 010 bytes/Output 020 bytes"></Text>
+          <Text TextId="MODULNAME_03"
+                Value="PSI6xxx.741"></Text>
+          <Text TextId="MODULINFO_03"
+                Value="Input/Output 006 bytes"></Text>
+          <Text TextId="MODULNAME_04"
+                Value="PSI6xxx.728"></Text>
+          <Text TextId="MODULINFO_04"
+                Value="Input 018 bytes/Output 026 bytes"></Text>
+          <Text TextId="MODULNAME_05"
+                Value="PSI6xxx.751"></Text>
+          <Text TextId="MODULINFO_05"
+                Value="Input/Output 018 bytes"></Text>
+          <Text TextId="MODULNAME_06"
+                Value="PSI6xxx.757"></Text>
+          <Text TextId="MODULINFO_06"
+                Value="Input/Output 006 bytes"></Text>
+          <Text TextId="MODULNAME_07"
+                Value="PSI6xxx.729"></Text>
+          <Text TextId="MODULINFO_07"
+                Value="Input 020 bytes/Output 026 bytes"></Text>
+          <Text TextId="MODULNAME_08"
+                Value="PSI6xxx.758"></Text>
+          <Text TextId="MODULINFO_08"
+                Value="Input/Output 006 bytes"></Text>
+          <Text TextId="MODULNAME_09"
+                Value="PSI6xxx.727"></Text>
+          <Text TextId="MODULINFO_09"
+                Value="Input 008 bytes/Output 008 bytes"></Text>
+          <Text TextId="MODULNAME_10"
+                Value="PSI6xxx.759"></Text>
+          <Text TextId="MODULINFO_10"
+                Value="Input/Output 016 bytes"></Text>
+          <Text TextId="MODULNAME_11"
+                Value="PSI6xxx.761"></Text>
+          <Text TextId="MODULINFO_11"
+                Value="Input 022 bytes/Output 026 bytes"></Text>
+          <Text TextId="MODULNAME_12"
+                Value="PSI6xxx.725"></Text>
+          <Text TextId="MODULINFO_12"
+                Value="Input 008 bytes/Output 008 bytes"></Text>
+          <Text TextId="MODULNAME_13"
+                Value="PSI6xxx.752"></Text>
+          <Text TextId="MODULINFO_13"
+                Value="Input 018 bytes/Output 018 bytes"></Text>
+          <Text TextId="MODULNAME_14"
+                Value="PSI6xxx.732"></Text>
+          <Text TextId="MODULINFO_14"
+                Value="Input 018 bytes/Output 018 bytes"></Text>
+          <Text TextId="MODULNAME_15"
+                Value="PSI6xxx.747"></Text>
+          <Text TextId="MODULINFO_15"
+                Value="Input 006 bytes/Output 006 bytes"></Text>
+          <Text TextId="MODULNAME_16"
+                Value="PSI6xxx.778"></Text>
+          <Text TextId="MODULINFO_16"
+                Value="Input 032 bytes/Output 032 bytes"></Text>
+          <Text TextId="MODULNAME_17"
+                Value="PSI6xxx.780"></Text>
+          <Text TextId="MODULINFO_17"
+                Value="Input 022 bytes/Output 026 bytes"></Text>
+          <Text TextId="MODULNAME_18"
+                Value="PSI6xxx.762"></Text>
+          <Text TextId="MODULINFO_18"
+                Value="Input 020 bytes/Output 026 bytes"></Text>
+          <Text TextId="MODULNAME_19"
+                Value="PSI6xxx.710"></Text>
+          <Text TextId="MODULINFO_19"
+                Value="Input 008 bytes/Output 008 bytes"></Text>
+          <Text TextId="MODULNAME_20"
+                Value="PSI6xxx.787"></Text>
+          <Text TextId="MODULINFO_20"
+                Value="Input/Output 006 bytes"></Text>
+          <Text TextId="MODULNAME_21"
+                Value="PSI6xxx.789"></Text>
+          <Text TextId="MODULINFO_21"
+                Value="Input/Output 016 bytes"></Text>
+          <Text TextId="MODULNAME_22"
+                Value="PSI6xxx.782"></Text>
+          <Text TextId="MODULINFO_22"
+                Value="Input 018 bytes/Output 026 bytes"></Text>
+           <Text TextId="MODULNAME_23"
+                Value="PSI6xxx.730"></Text>
+         <Text TextId="MODULINFO_23"
+                Value="Input 010 bytes/Output 016 bytes"></Text>
+           <Text TextId="MODULNAME_24"
+                Value="PSI6xxx.734"></Text>
+         <Text TextId="MODULINFO_24"
+                Value="Input 018 bytes/Output 026 bytes"></Text>
+          <!--Other modules-->
+          <Text TextId="MODULNAME_EMPTY"
+                Value="Empty slot"></Text>
+          <!--Text-->
+          <Text TextId="INPUT"
+                Value="Input" />
+          <Text TextId="OUTPUT"
+                Value="Output" />
+        </PrimaryLanguage>
+      </ExternalTextList>
+    </ApplicationProcess>
+  </ProfileBody>
+</ISO15745Profile>
